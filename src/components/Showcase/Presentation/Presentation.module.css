@@ -1,0 +1,9 @@
+.Presentation {
+   background-color: var(--dark-color-70);
+   padding: 15px;
+   border-radius: 15px;
+   color:var(--white);
+   margin:15px;
+}
+
+

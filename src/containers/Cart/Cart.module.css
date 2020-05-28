@@ -1,0 +1,29 @@
+.container {
+   min-height: 95vh;
+   background-color: var(--primary-color-20);
+   
+}
+
+.CartContainer{ 
+   display: grid;
+   grid-template-columns: 70% 30%;
+   max-width: 1280px;
+   margin:auto;
+}
+
+.Cart {
+   padding: 25px 40px;
+}
+
+
+@media (max-width: 1000px) {
+   .CartContainer {
+      grid-template-columns: 100%
+   }
+   
+   .CartDetails{
+      min-width: 400px;
+      max-width: 600px;
+      margin:auto;
+   }
+}

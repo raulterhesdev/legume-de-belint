@@ -1,0 +1,7 @@
+.Header{
+   min-height: 5vh;
+   display: grid;
+   grid-template-columns: 20% 80%;
+   background-color: var(--dark-color);
+   padding: 10px 40px;
+}

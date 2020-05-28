@@ -1,0 +1,29 @@
+.MenuShop {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+
+.MenuLink {
+   padding: 10px 5px;
+   margin: 0 16px;
+   color: var(--white);
+   font-size: 18px;
+   border-bottom: 3px solid rgba(0,0,0,0)
+}
+
+.MenuLink:hover {
+   border-bottom: 3px solid var(--primary-color-70);
+   color:var(--primary-color-70)
+}
+
+.ActiveLink {
+   border-bottom: 3px solid var(--accent-color);
+   color: var(--accent-color)
+}
+
+.ActiveLink:hover {
+   border-bottom: 3px solid var(--accent-color-70);
+   color: var(--accent-color-70)
+}

@@ -1,0 +1,20 @@
+.CarouselContainer {
+   margin: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   padding: 4%;
+   background-color: var(--dark-color-70);
+   border-radius: 15px;
+}
+
+.Carousel {
+   max-height: 50%;
+}
+
+
+
+
+
+

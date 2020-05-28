@@ -1,0 +1,32 @@
+.container{
+   min-height: 94vh;
+   background-color: var(--primary-color-20);
+}
+
+.Shop {
+   padding: 30px 80px;
+   display: grid;
+   grid-template-columns: repeat(5,1fr);
+}
+
+@media (max-width: 1560px) {
+   .Shop {
+      grid-template-columns: repeat(4,1fr);
+   }
+}
+
+@media (max-width: 1280px) {
+   .Shop {
+      grid-template-columns: repeat(3,1fr);
+   }
+}
+@media (max-width: 1000px) {
+   .Shop {
+      grid-template-columns: repeat(2,1fr);
+   }
+}
+@media (max-width: 720px) {
+   .Shop {
+      grid-template-columns: repeat(1,1fr);
+   }
+}

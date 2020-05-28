@@ -1,0 +1,6 @@
+.PresentationTitle{
+   text-align: right;
+   margin:15px 35px 10px 0;
+   padding-right: 8px;
+   border-right: 3px solid var(--accent-color);
+}

@@ -1,0 +1,107 @@
+.CartItem {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   grid-column: span 2/2;
+   background-color: var(--white-70);
+   padding: 12px ;
+   margin: 12px 8px;
+   box-shadow: 1px 1px 4px var(--primary-color);
+}
+
+.Image {
+   max-height: 100px;
+   border-radius: 4px;
+   margin: 4px;
+}
+
+.Info{
+   display: flex;
+   align-items: center;
+}
+
+
+.Title {
+   color: var(--dark-color);
+   font-size: 1.4rem;
+   padding: 12px 8px;
+   border-right: 2px solid var(--primary-color);
+   text-align: right;
+   
+}
+
+.PricePer {
+   color: var(--primary-color);
+   font-size: 1.1rem;
+   padding: 12px 8px;
+   border-right: 2px solid var(--primary-color);
+   text-align: right;
+}
+
+.Group {
+   display: grid;
+   align-items: center;
+   justify-content: center;
+   margin:4px;
+   margin: 0 12px;
+}
+
+.Input {
+   margin-bottom: 12px;
+   padding: 12px 4px 12px 12px;
+   max-width: 70px;
+   background-color: var(--white);
+   border: 1px solid var(--primary-color-70);
+   outline: none;
+   border-radius: 8px;
+   margin: 0 20px;
+   color:var(--dark);
+   font-size:1rem;
+}
+
+.Total {
+   grid-column: span 2;
+   font-size: 1.4rem;
+   color: var(--dark-color);
+   border-bottom: 2px solid var(--accent-color);
+   margin-top: 12px;
+   padding: 4px;
+}
+
+.DangerButton {
+   padding: 8px 12px;
+   background-color: rgba(0,0,0,0);
+   border: 1px solid var(--secondary-color);
+   color: var(--secondary-color);
+   margin:4px;
+   border-radius: 3px;
+   outline: none;
+}
+
+.DangerButtonHover {
+   padding: 8px 12px;
+   background-color: var(--secondary-color);
+   border: 1px solid var(--secondary-color);
+   color: var(--white);
+   margin:4px;
+   border-radius: 3px;
+   outline: none;
+}
+
+
+@media (max-width: 650px) {
+   .CartItem {
+      flex-direction: column;
+   }
+   .Image{
+      max-width: 80%;
+      max-height: 300px;
+      border-radius: 5px;
+   }
+   .Group {
+      margin: 12px
+   }
+}
+
+
+

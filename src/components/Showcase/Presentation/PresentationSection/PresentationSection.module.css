@@ -1,0 +1,13 @@
+.PresentationSubtitle {
+   text-align: right;
+   padding-right: 6px;
+   margin: 15px 0 10px 0;
+   border-right: 3px solid var(--accent-color);
+}
+
+.PresentationText {
+   text-align: justify;
+   margin: 0 40px 10px 10px;
+   padding-left: 4px;
+   border-left: 3px solid var(--accent-color);
+}
