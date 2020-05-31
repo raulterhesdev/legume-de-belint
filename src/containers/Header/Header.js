@@ -7,7 +7,7 @@ import Menu from '../../components/Menu/Menu'
 
 const Header = (props) => {
    return (
-      <div className={classes.Header}>
+      <div className={classes.Header} >
          <Logo logoText = "Legume De Belint" />
          <Menu />
       </div>

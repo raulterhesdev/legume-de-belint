@@ -1,5 +1,6 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
+import {useSpring, animated} from 'react-spring'
 
 import classes from './Presentation.module.css'
 
@@ -18,13 +19,24 @@ const Presentation = (props) => {
       </PresentationSection>)
    })
 
+   const fade = useSpring({
+      from: {
+         opacity: 0,
+         transform: 'translate3d(50px,50px,0)'
+      },
+      to: {
+         opacity: 1,
+         transform: 'translate3d(0,0px,0)'
+      }
+   })
+
    return (
-      <div className={classes.Presentation}>
+      <animated.div className={classes.Presentation} style={fade}>
          <PresentationTitle>
             {presentationTitle}
          </PresentationTitle>
          {presentationContent}
-      </div>
+      </animated.div>
    )
 }
 

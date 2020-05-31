@@ -1,0 +1,14 @@
+.DangerButton {
+   padding: 8px 12px;
+   background-color: var(--secondary-color);
+   color: var(--white);
+   margin:4px;
+   border:none;
+   border-radius: 3px;
+   outline: none;
+   transition: all 0.2s ease-out;
+}
+
+.DangerButton:hover {
+   background-color: var(--secondary-color-dark);
+}

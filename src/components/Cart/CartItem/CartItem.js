@@ -1,21 +1,26 @@
-import React, { useState } from 'react'
+import React from 'react'
+import {useSpring, animated} from 'react-spring'
 
 import classes from './CartItem.module.css'
 
+import DangerButton from '../../../components/UI/DangerButton/DangerButton'
+
 const CartItem = (props) => {
    const product = {...props.product}
-   const [hover, setHover] = useState(false)
 
-   const toggleHover = () => {
-      setHover(previous => !previous)
-   }
-
-   const buttonStyle = {
-      transition: "all 0.2s ease-out"
-   }
+   const fade = useSpring({
+      from: {
+         opacity: 0,
+         transform: 'translate3d(-40px,-40px,0)'
+      },
+      to: {
+         opacity: 1,
+         transform: 'translate3d(0,0px,0)'
+      }
+   })
 
    return (
-      <div className={classes.CartItem}>
+      <animated.div className={classes.CartItem} style={fade}>
          <img 
          src={product.imageUrl} 
          alt={product.imageAlt}
@@ -38,15 +43,11 @@ const CartItem = (props) => {
                <p className={classes.Total}>Total: {product.price * product.quantity} Lei</p>
             </div>
          </div>
-         <button 
-         className={hover ? classes.DangerButtonHover : classes.DangerButton}
-         style={buttonStyle}
-         onClick = {props.removeProduct}
-         onMouseEnter={toggleHover} 
-         onMouseLeave={toggleHover}>
+         <DangerButton 
+         onClick = {props.removeProduct}>
             Elimina
-         </button>
-      </div>
+         </DangerButton>
+      </animated.div>
    )
 }
 

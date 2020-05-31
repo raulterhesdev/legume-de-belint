@@ -1,0 +1,21 @@
+.Button {
+   padding: 10px 30px;
+   border:none;
+   background-color: var(--primary-color);
+   color: var(--white);
+   border-radius:3px;
+   outline: none;
+   transition: all 0.2s ease-out;
+}
+
+.Button:hover {
+   background-color: var(--dark-color);
+}
+
+.Button:active{
+   color: var(--accent-color)
+}
+
+.Button:disabled {
+   background-color: var(--dark-color-70);
+}

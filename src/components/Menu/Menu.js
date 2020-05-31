@@ -1,6 +1,7 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 
+
 import classes from './Menu.module.css'
 
 import MenuItem from './MenuItem/MenuItem'
@@ -15,16 +16,20 @@ const Menu = (props) => {
       }
    }
 
+   const isAdmin = true;
+
    return (
       <div className={classes.Menu}>
          <div className={classes.MenuGroup}>
             <MenuItem  link="/" exact>Acasa</MenuItem>
             <MenuItem  link="/magazin">Legume</MenuItem>
+            {isAdmin ? <MenuItem  link="/admin">Admin</MenuItem> : null}
          </div>
          <MenuItem  link="/cos" last>
             <span>Cos</span>
             <i className="fas fa-shopping-cart"></i>
-            <span className={classes.Badge}>{numberOfProducts}</span>
+            <span className={classes.Badge} >{numberOfProducts}</span>
+            
             </MenuItem>
       </div>
    )

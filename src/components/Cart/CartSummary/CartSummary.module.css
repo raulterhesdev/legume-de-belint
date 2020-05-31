@@ -29,23 +29,7 @@
    margin-bottom: 12px;
 }
 
-
-.Button {
-   padding: 10px 30px;
-   border:none;
-   background-color: var(--primary-color);
-   color: var(--white);
-   border-radius:3px;
-   outline: none;
-}
-.ButtonHover {
-   background-color: var(--dark-color);
-}
-
-.Button:active, .ButtonHover:active{
-   color: var(--accent-color)
-}
-
-.Button:disabled {
-   background-color: var(--dark-color-70);
+.Error {
+   color: var(--secondary-color);
+   padding: 0 12px;
 }

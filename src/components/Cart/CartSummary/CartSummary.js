@@ -2,17 +2,10 @@ import React, { useState } from 'react'
 
 import classes from './CartSummary.module.css'
 
-import Input from './Input/Input'
+import Input from '../../UI/Input/Input'
+import PrimaryButton from '../../../components/UI/PrimaryButton/PrimaryButton'
 
 const CartSummary = (props) => {
-   const [hover, setHover] = useState(false)
-   const toggleHover = () => {
-      setHover(previous => !previous)
-   }
-
-   const buttonStyle = {
-      transition: "all 0.2s ease-out"
-   }
 
    const [name, setName] = useState('Raul')
    const [surname, setSurname] = useState('Terhes')
@@ -99,7 +92,6 @@ const CartSummary = (props) => {
       let errorString = '';
       for (const key in validatorMessage) {
          if (validatorMessage.hasOwnProperty(key)) {
-            const element = validatorMessage[key];
             errorString = `${errorString}
             ${errorMsgRo[key]}. `
          }
@@ -153,21 +145,15 @@ const CartSummary = (props) => {
             value={address}
             onChange={inputChangeHandler}
             />
-            <p>{error}</p>
+            <p className={classes.Error}>{error}</p>
          </div>
          <div className={classes.Container}>
             <p className={classes.Title}>Total Comanda:</p>
             <p className={classes.Price}>{props.totalPrice} Lei</p>
-            <button 
-               disabled={!props.buttonAvailable}
-               style={buttonStyle}
-               className={!hover ? classes.Button : `${classes.Button} ${classes.ButtonHover}`} 
-               onClick={buttonPressedHandler}
-               onMouseEnter={toggleHover} 
-               onMouseLeave={toggleHover}
-               >
-                  Comanda Acum
-               </button>
+            <PrimaryButton onClick={buttonPressedHandler}
+            disabled={!props.buttonAvailable}>
+               Comanda Acum
+            </PrimaryButton>
          </div>
       </div>
    )

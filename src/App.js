@@ -8,6 +8,8 @@ import Showcase from './containers/Showcase/Showcase'
 import Shop from './containers/Shop/Shop'
 import Cart from './containers/Cart/Cart'
 import Footer from './containers/Footer/Footer'
+import Admin from './containers/Admin/Admin'
+import Login from './containers/Login/Login'
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
     <div>
       <Header />
       <Switch>
+        <Route path="/login" exact component={Login} />
+        <Route path="/admin" component={Admin} />
         <Route path="/magazin" component={Shop} />
         <Route path="/cos" component={Cart} />
         <Route path="/" exact component={Showcase} />

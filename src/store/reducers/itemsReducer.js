@@ -27,7 +27,8 @@ const initialState = {
       title: "Leguma 3",
       price: 5,
       unit: "kg"
-   }],
+   }
+],
    order: {},
    totalPrice: 0
 }

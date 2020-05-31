@@ -13,6 +13,77 @@
    max-height: 50%;
 }
 
+.ArrowStyle {
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   height: 100%;
+   cursor: pointer;
+   padding: 12px;
+   border: none;
+   background-color: rgba(0,0,0,0);
+   color:var(--primary-color-70);
+   outline:none;
+   transition: all 0.5s ease-out;
+}
+
+.ArrowStyle:hover {
+   background-color: var(--dark-color-40);
+   color:var(--primary-color)
+}
+
+.ArrowRight {
+   right: 0;
+}
+
+.ArrowLeft{
+   left: 0;
+}
+
+.IndicatorStyle{
+   display: inline-block;
+   margin: 0 8px;
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background-color: var(--white);
+   transition: all 0.3s ease-out;
+}
+
+.IndicatorStyle:hover {
+   background-color: var(--primary-color-70);
+}
+
+.IndicatorActive {
+   background-color: var(--accent-color);
+}
+
+.IndicatorActive:hover {
+   background-color: var(--accent-color-70);
+}
+
+.Legend{
+   transition: all 0.5s ease-in-out;
+   position: absolute;
+   top: 10px;
+   left: 50%;
+   margin-left: -35%;
+   width: 70%;
+   border-radius: 5px;
+   background: var(--dark-color-40);
+   color: var(--white);
+   padding: 10px;
+   font-size: 14px;
+   text-align: center;
+   transition: all 0.3s ease-out;
+}
+
+.Legend:hover {
+   background: var(--dark-color-70);
+}
+
+
+
 
 
 

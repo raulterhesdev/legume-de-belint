@@ -1,0 +1,6 @@
+.Admin{
+   min-height: 95vh;
+   width: 100%;
+   display: grid;
+   grid-template-columns: 20% 80%;
+}

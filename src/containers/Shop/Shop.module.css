@@ -4,29 +4,37 @@
 }
 
 .Shop {
-   padding: 30px 80px;
+   padding: 30px 100px;
    display: grid;
    grid-template-columns: repeat(5,1fr);
+}
+
+.ModalText{
+   color: var(--dark)
 }
 
 @media (max-width: 1560px) {
    .Shop {
       grid-template-columns: repeat(4,1fr);
+      padding: 30px 80px;
    }
 }
 
 @media (max-width: 1280px) {
    .Shop {
       grid-template-columns: repeat(3,1fr);
+      padding: 30px 60px;
    }
 }
 @media (max-width: 1000px) {
    .Shop {
       grid-template-columns: repeat(2,1fr);
+      padding: 30px 40px;
    }
 }
 @media (max-width: 720px) {
    .Shop {
       grid-template-columns: repeat(1,1fr);
+      padding: 20px;
    }
 }
