@@ -5,12 +5,15 @@ import classes from '../../../../UI/Input/Input'
 import Input from '../../../../UI/Input/Input'
 import PrimaryButton from '../../../../UI/PrimaryButton/PrimaryButton'
 import Select from '../../../../UI/Select/Select'
+import ImageSelector from '../../../../UI/ImageSelector/ImageSelector'
 
 const EditProduct = ({editItem,...props}) => {
    const [error, setError] = useState(null)
    const [title, setTitle] = useState('')
    const [price, setPrice] = useState(0)
    const [imageAlt, setImageAlt] = useState('')
+   const [unit, setUnit] = useState('Legatura')
+   const [file, setFile] = useState()
 
    useEffect(() => {
       if(editItem){
@@ -27,7 +30,9 @@ const EditProduct = ({editItem,...props}) => {
 
    const inputKeys = {
       title: 'title',
-      price: 'price'
+      price: 'price',
+      unit: 'unit',
+      file: 'file'
    }
 
    const errorMsgRo = {
@@ -44,6 +49,12 @@ const EditProduct = ({editItem,...props}) => {
             break
          case inputKeys.price:
             setPrice(value)
+            break
+         case inputKeys.unit:
+            setUnit(value)
+            break
+         case inputKeys.file:
+            setFile(value)
             break
          default:
             break
@@ -81,31 +92,38 @@ const EditProduct = ({editItem,...props}) => {
       }
       setError(errorString)
 
-      // const orderContact = {name, surname, email, phone, address}
+      // const editedItem = {name, surname, email, phone, address}
 
       // if(!validatorMessage){
       //    props.orderPlaced(orderContact)
       // }
    }
 
-   console.log(editItem)
+   const selectValues = ["Bucata", "Legatura", "Kg"] 
+
    return (
       <div>
          <Input 
-            id="title"
+            id={inputKeys.title}
             type="text"
             placeholder="Titlu"
             value={title}
             onChange={inputChangeHandler}
             />
          <Input 
-            id="price"
+            id={inputKeys.price}
             type="number"
             //placeholder="Titlu"
             value={price}
             onChange={inputChangeHandler}
             />
-         
+         <Select 
+         options={selectValues} 
+         value={unit} 
+         onChange={inputChangeHandler}
+         id={inputKeys.unit}
+         />
+         <ImageSelector onChange={inputChangeHandler} id={inputKeys.file}/>
          <p>{error}</p>
          <PrimaryButton onClick={buttonPressedHandler}>
             {editItem ? "Editeaza Produsul" : "Adauga Produsul"}
