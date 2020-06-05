@@ -1,6 +1,77 @@
 .Order {
+   width: 100%;
+   margin: 5px;
+
+}
+
+.OrderSummary {
+   background-color: var(--dark-color-70);
+   border-radius:5px ;
    display: flex;
    align-items: center;
-   justify-content: space-between;
-   width: 100%;
+   justify-content: space-around;
+   padding: 12px 8px;
+   color: var(--white)
 }
+
+.OrderData {
+   display: flex;
+   justify-content: space-around;
+   width: 95%;
+   margin: auto;
+   border: 1px solid var(--primary-color);
+   border-width: 0 1px 1px 1px;
+   border-bottom-left-radius: 8px;
+   border-bottom-right-radius: 8px;
+   padding: 8px;
+   color: var(--dark);
+}
+
+.Details{
+   width: 80%;
+   padding: 5px 12px;
+}
+
+.Product {
+   display: grid;
+   grid-template-columns: 1fr 4fr 6fr;
+   align-items: center;
+   border-bottom: 1px solid var(--primary-color-70);
+}
+
+.Span {
+   padding-left: 3px;
+}
+
+.Span:first-child{
+   border-right: 1px solid var(--primary-color);
+   text-align: end;
+   padding-right: 3px;
+}
+
+.Span:nth-child(2){
+   border-right: 1px solid var(--primary-color);
+}
+
+.Contact {
+   border-bottom: 1px solid var(--primary-color-70);
+}
+
+.ExpandButton{
+   padding: 2px 12px;
+   background-color: rgba(0,0,0,0);
+   border: none;
+   color: var(--white);
+   outline:none;
+   font-size: 1.5rem;
+}
+
+
+@media (max-width: 600px) {
+   .OrderData {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+}
+

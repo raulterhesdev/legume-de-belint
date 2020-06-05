@@ -4,7 +4,6 @@
    justify-content: flex-end;
 }
 
-
 .MenuLink {
    padding: 10px 5px;
    margin: 0 16px;
@@ -26,4 +25,10 @@
 .ActiveLink:hover {
    border-bottom: 3px solid var(--accent-color-70);
    color: var(--accent-color-70)
+}
+
+@media (max-width: 600px) {
+   .MenuLink {
+      padding: 10px 48px;
+   }
 }

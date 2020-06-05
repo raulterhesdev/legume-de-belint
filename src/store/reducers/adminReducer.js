@@ -1,4 +1,4 @@
-import { SEND_ORDER } from '../actions/actionTypes'
+import { SEND_ORDER, LOGIN, LOGIN_FAIL, LOGOUT, FETCH_ORDERS, TOGGLE_SIDEBAR } from '../actions/actionTypes'
 
 import { updateObject } from '../utility'
 
@@ -36,86 +36,10 @@ const initialState = {
          legend:"Text 1"
       }
    ],
-   orders: [{
-      contactInfo:{
-         name: 'Raul',
-         surname: 'Terhes',
-         email:'raul@raul.com',
-         phone: '03947564785',
-         address: 'Giroc, Str. Princ, nr 3021'
-      },
-      date: new Date(),
-      orderProducts: {
-         leguma1: 1,
-         leguma2: 2,
-         leguma3: 3
-      },
-      totalPrice: 12
-   },
-   {
-      contactInfo:{
-         name: 'Raul',
-         surname: 'Terhes',
-         email:'raul@raul.com',
-         phone: '03947564785',
-         address: 'Giroc, Str. Princ, nr 3021'
-      },
-      date: new Date(),
-      orderProducts: {
-         leguma1: 1,
-         leguma2: 2,
-         leguma3: 3
-      },
-      totalPrice: 12
-   },
-   {
-      contactInfo:{
-         name: 'Raul',
-         surname: 'Terhes',
-         email:'raul@raul.com',
-         phone: '03947564785',
-         address: 'Giroc, Str. Princ, nr 3021'
-      },
-      date: new Date(),
-      orderProducts: {
-         leguma1: 1,
-         leguma2: 2,
-         leguma3: 3
-      },
-      totalPrice: 12
-   },
-   {
-      contactInfo:{
-         name: 'Raul',
-         surname: 'Terhes',
-         email:'raul@raul.com',
-         phone: '03947564785',
-         address: 'Giroc, Str. Princ, nr 3021'
-      },
-      date: new Date(),
-      orderProducts: {
-         leguma1: 1,
-         leguma2: 2,
-         leguma3: 3
-      },
-      totalPrice: 12
-   },
-   {
-      contactInfo:{
-         name: 'Raul',
-         surname: 'Terhes',
-         email:'raul@raul.com',
-         phone: '03947564785',
-         address: 'Giroc, Str. Princ, nr 3021'
-      },
-      date: new Date(),
-      orderProducts: {
-         leguma1: 1,
-         leguma2: 2,
-         leguma3: 3
-      },
-      totalPrice: 12
-   }]
+   orders: [],
+   isLoggedIn: false,
+   error: null,
+   sidebarOpen: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -125,6 +49,32 @@ const reducer = (state = initialState, action) => {
          orders.push(action.orderData)
          
          return updateObject(state, {orders:orders})
+      case FETCH_ORDERS:
+         const update = {
+            orders: action.orderData
+         }
+         return updateObject(state, update)
+      case LOGIN: 
+         return{
+            ...state,
+            isLoggedIn:true,
+            error: null
+         }
+      case LOGIN_FAIL:
+         return {
+            ...state,
+            error: action.error
+         }
+      case LOGOUT:
+         return{
+            ...state,
+            isLoggedIn: false
+         }
+      case TOGGLE_SIDEBAR:
+         return {
+            ...state,
+            sidebarOpen: !state.sidebarOpen
+         }
       default: return state
    }
    

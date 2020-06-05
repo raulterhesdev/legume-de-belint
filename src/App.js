@@ -10,12 +10,14 @@ import Cart from './containers/Cart/Cart'
 import Footer from './containers/Footer/Footer'
 import Admin from './containers/Admin/Admin'
 import Login from './containers/Login/Login'
+import Sidebar from './components/UI/Sidebar/Sidebar'
 
 
 function App() {
   return (
     <div>
       <Header />
+      <Sidebar />
       <Switch>
         <Route path="/login" exact component={Login} />
         <Route path="/admin" component={Admin} />

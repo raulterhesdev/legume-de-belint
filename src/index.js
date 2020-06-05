@@ -26,7 +26,6 @@ const store = createStore(rootReducer, composeEnhancers(
 ));
 
 
-
 const app = (
     <Provider store={store}>
         <BrowserRouter>
@@ -36,8 +35,8 @@ const app = (
 )
 
 ReactDOM.render(
-  app,
-  document.getElementById('root')
+    app,
+    document.getElementById('root')
 );
 
 serviceWorker.unregister();

@@ -15,7 +15,7 @@ const Input = (props) => {
          type={props.type} 
          placeholder={props.placeholder}
          value={props.value}
-         onChange={(event) => {props.onChange(event.target.value,props.id)}}
+         onChange={(event) => {props.onChange(event.target.value ,props.id)}}
          onFocus={toggleActive}
          onBlur={toggleActive}
       />

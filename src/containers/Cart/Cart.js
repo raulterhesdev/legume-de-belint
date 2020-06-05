@@ -74,7 +74,7 @@ const Cart = (props) => {
          totalPrice: totalPrice,
          date: new Date()
       }
-      dispatch(adminActions.sendOrder(orderInfo))
+      dispatch(adminActions.sendOrderData(orderInfo))
       setShowConfirmationModal(true)
       setTimeout(() => {
          setShowConfirmationModal(false)

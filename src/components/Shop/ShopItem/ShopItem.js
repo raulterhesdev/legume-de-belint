@@ -12,11 +12,11 @@ const ShopItem = (props) => {
             <div className={classes.Info}>
                <p className={classes.Title}>{props.title}</p>
                <div className={classes.PriceContainer}>
-                  <p className={classes.Price}>{props.price} Lei / {props.unit}</p>
+                  <p className={classes.Price}>{+props.price} Lei / {props.unit}</p>
                </div>
-               <PrimaryButton onClick={() => {props.onAddToCart(props.id)}}>
+               {props.enabled ? <PrimaryButton onClick={() => {props.onAddToCart(props.id)}} disabled={!props.enabled}>
                   {props.buttonText}
-               </PrimaryButton>
+               </PrimaryButton> : <p className={classes.Unavailable}>{props.disabledText}</p>}
             </div>
          </div>
    )

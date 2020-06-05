@@ -1,0 +1,31 @@
+.SidebarItem{
+   color: var(--white);
+   padding: 16px 12px;
+   font-size: 16px;
+   transition: all 0.2s ease-out;
+}
+
+.SidebarItem:hover{
+   background-color: var(--dark-color-70);
+   color: var(--primary-color-70);
+   border-bottom: 2px solid var(--primary-color-70)
+}
+
+.ActiveLink, .ActiveLink:hover {
+   background-color: var(--dark-color);
+   color: var(--accent-color);
+   border-bottom: 4px solid var(--accent-color)
+}
+
+@media (min-width: 800px) {
+   .SidebarItem {
+      width: 100%;
+      border-bottom: 4px solid rgba(0,0,0,0)
+   }
+   .SidebarItem:hover{
+      border-bottom: 4px solid var(--primary-color-70)
+   }
+   .ActiveLink, .ActiveLink:hover {
+      border-bottom: 4px solid var(--accent-color)
+   }
+}

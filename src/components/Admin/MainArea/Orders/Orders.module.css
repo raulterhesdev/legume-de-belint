@@ -1,3 +1,17 @@
 .Orders {
-   width: 100%;
+   
+   display: flex;
+   flex-direction: column;
+
 }
+.ActionContainer{
+   width: 100%;
+   padding: 5px 12px 15px 12px;
+   border-bottom: 1px solid var(--primary-color-70);
+}
+.OrdersContainer{
+   width: 90%;
+   max-width: 1280px;
+   margin: auto;
+}
+

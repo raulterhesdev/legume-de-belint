@@ -5,3 +5,10 @@
    background-color: var(--dark-color);
    padding: 10px 40px;
 }
+
+@media (max-width: 600px) {
+   .Header{
+      
+      grid-template-columns: 90% 10% ;
+   }
+}

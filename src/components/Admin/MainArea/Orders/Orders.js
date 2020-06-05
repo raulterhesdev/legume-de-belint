@@ -1,35 +1,49 @@
-import React, { useState } from 'react'
-import {useSelector} from 'react-redux'
+import React, { useState , useEffect } from 'react'
+import {useSelector , useDispatch} from 'react-redux'
 
 import classes from './Orders.module.css'
 
 import Order from './Order/Order'
+import PrimaryButton from '../../../UI/PrimaryButton/PrimaryButton'
+
+import * as adminActions from '../../../../store/actions/adminActions'
 
 const Orders = () => {
-   const [showVegetables, setShowVegetables] = useState(true)
-   const [showContact, setShowContact] = useState(true)
+   const dispatch = useDispatch()
+
+   const [expandAll, setExpandAll] = useState(true)
+
+   useEffect(() => {
+      const fetchData = async () => {
+         await dispatch(adminActions.fetchOrderData())
+      }
+      fetchData();
+   },[dispatch])
 
    const orders = useSelector(state => state.admin.orders)
    const displayContent = []
-   let index=1
-   orders.forEach(order => {
-      const orderComponent = (
-         <Order key={index} index={index} order={order} showVegetables={showVegetables} showContact={showContact}/>
-      )
-      displayContent.push(orderComponent)
-      index +=1
-   });  
+   if(orders){
+      let index=1
+      orders.forEach(order => {
+         const orderComponent = (
+            <Order key={index} index={index} order={order} expandAll={expandAll}/>
+         )
+         displayContent.push(orderComponent)
+         index +=1
+         
+      }); 
+   } 
 
    return (
       <div  className={classes.Orders}>
-         <p>Orders</p>
-         <label htmlFor="showVegetables">
-         <input type="checkbox" title="showVegetables" checked={showVegetables} onChange={()=>{setShowVegetables(prev => !prev)}} />
-         Show Vegetables</label>
-         <label htmlFor="showContact">
-         <input type="checkbox" title="showContact" checked={showContact} onChange={()=>{setShowContact(prev=> !prev)}} />
-         Show Contact</label>
-         {displayContent}
+         <div className={classes.ActionContainer}>
+            <PrimaryButton onClick={()=> setExpandAll(prev => !prev)}>
+               {expandAll ? "Restrangere" : "Expandare"}
+            </PrimaryButton>
+         </div>
+         <div className={classes.OrdersContainer}>
+            {displayContent}
+         </div>
       </div>
    )
 }

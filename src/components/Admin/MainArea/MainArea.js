@@ -27,7 +27,7 @@ const MainArea = (props) => {
       default: break
    }
    return (
-      <div>
+      <div className={classes.MainArea}>
          {displayComponent}
       </div>
    )

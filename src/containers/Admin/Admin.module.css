@@ -1,6 +1,19 @@
 .Admin{
-   min-height: 95vh;
+   min-height: 90vh;
    width: 100%;
    display: grid;
-   grid-template-columns: 20% 80%;
+   grid-template-columns: 10% 90%;
+}
+
+
+@media (max-width: 1400px) {
+   .Admin{
+      grid-template-columns: 20% 80%;
+   }
+}
+
+@media (max-width: 800px) {
+   .Admin{
+      grid-template-columns: 100%;
+   }
 }

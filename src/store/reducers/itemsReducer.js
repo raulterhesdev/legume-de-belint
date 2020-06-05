@@ -1,34 +1,9 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_PRODUCT_QUANTITY } from "../actions/actionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_PRODUCT_QUANTITY, FETCH_PRODUCTS, EDIT_PRODUCT, ADD_PRODUCT, DELETE_PRODUCT } from "../actions/actionTypes";
 
 import { updateObject } from '../utility'
 
 const initialState = {
-   products: [
-      {
-      id: "leguma1",
-      imageUrl: require("../../assets/images/carousel/carousel (1).jpg"),
-      imageAlt: "Leguma 1",
-      title: "Leguma 1",
-      price: 3,
-      unit: "bucata"
-   },
-   {
-      id: 'leguma2',
-      imageUrl: require("../../assets/images/carousel/carousel (2).jpg"),
-      imageAlt: "Leguma 1",
-      title: "Leguma 2",
-      price: 2,
-      unit: "legatura"
-   },
-   {
-      id: 'leguma3',
-      imageUrl: require("../../assets/images/carousel/carousel (2).jpg"),
-      imageAlt: "Leguma 1",
-      title: "Leguma 3",
-      price: 5,
-      unit: "kg"
-   }
-],
+   products: [],
    order: {},
    totalPrice: 0
 }
@@ -81,6 +56,26 @@ const reducer = (state = initialState, action) => {
             totalPrice : newPrice
          }
          return updateObject(state, updateState)
+      case FETCH_PRODUCTS:
+         const update = {
+            products: action.postData
+         }
+         return updateObject(state, update)
+      case ADD_PRODUCT:
+         const allProduct = state.products;
+         allProduct.push(action.productData)
+         return updateObject(state, {products: allProduct})
+      case EDIT_PRODUCT:
+         console.log(action.productData)
+         console.log(state.products)
+         const allProducts = state.products;
+         const productsMap = allProducts.map(item => item.id === action.productData.id ? action.productData : item)
+         
+         return updateObject(state, {products: productsMap})
+      case DELETE_PRODUCT:
+         const allProds = state.products;
+         const productMap = allProds.filter(product => product.id !== action.id)
+         return updateObject(state, {products: productMap})
       default:
          return state
    }
