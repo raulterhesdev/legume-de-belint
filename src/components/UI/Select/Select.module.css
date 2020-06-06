@@ -1,0 +1,18 @@
+.Select {
+   display: block;
+   margin: 4px 0px;
+   padding: 12px 20px;
+   border-radius: 5px;
+   background-color: var(--white);
+   border: 1px solid var(--primary-color);
+   outline: none;
+   color:var(--dark-color);
+   font-size: 0.9rem;
+   margin: 12px;
+   transition: all 0.2s linear;
+}
+
+.Select:active{
+   border: 1px solid var(--accent-color);
+   color:var(--accent-color);
+}

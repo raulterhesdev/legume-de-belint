@@ -1,6 +1,6 @@
-.Input{
+.Filter{
    display: block;
-   margin: 4px 0px;
+   margin: 4px;
    padding: 12px 20px;
    border-radius: 5px;
    background-color: var(--white);
@@ -8,10 +8,9 @@
    outline: none;
    color:var(--dark-color);
    font-size: 0.9rem;
-   transition: all 0.2s linear;
 }
 
-.Input:focus{
+.Filter:focus{
    display: block;
    margin: 4px 0px;
    padding: 12px 20px;
@@ -23,7 +22,16 @@
    font-size: 0.9rem;
 }
 
-@media (max-width: 500px) {
-
+.FilterContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 12px 0 0 0;
 }
 
+@media (min-width: 700px){
+   .FilterContainer{
+      flex-direction: row;
+   }   
+}

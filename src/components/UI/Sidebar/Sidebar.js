@@ -6,8 +6,9 @@ import classes from './Sidebar.module.css'
 
 import MenuItem from '../../Menu/MenuItem/MenuItem'
 import Backdrop from '../Backdrop/Backdrop'
+import DangerButton from '../DangerButton/DangerButton'
 
-import {toggleSidebar} from '../../../store/actions/adminActions'
+import {toggleSidebar, logout} from '../../../store/actions/adminActions'
 
 const Sidebar = (props) => {
    const dispatch = useDispatch()
@@ -32,7 +33,6 @@ const Sidebar = (props) => {
    }
 
    const closeSidebar = () => {
-      console.log('here')
       dispatch(toggleSidebar())
    }
 
@@ -45,6 +45,11 @@ const Sidebar = (props) => {
                <MenuItem  link="/" exact>Acasa</MenuItem>
                <MenuItem  link="/magazin">Legume</MenuItem>
                {isLoggedIn ? <MenuItem  link="/admin">Admin</MenuItem> : null}
+               {isLoggedIn ? <div className={classes.Buttons}>
+                  <DangerButton onClick={() => dispatch(logout())}>
+                        Logout
+                  </DangerButton>
+               </div> : null}
             </div>
                <MenuItem  link="/cos" last>
                <span>Cos</span>

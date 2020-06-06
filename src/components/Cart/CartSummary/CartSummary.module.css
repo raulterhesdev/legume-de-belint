@@ -1,9 +1,9 @@
 .CartSummary {
    background-color: var(--white-70);
-   padding: 12px ;
-   margin: 12px 8px;
+   padding: 12px 0;
+   margin: 12px auto;
    box-shadow: 1px 1px 4px var(--primary-color);
-   
+
 }
 
 .Container {

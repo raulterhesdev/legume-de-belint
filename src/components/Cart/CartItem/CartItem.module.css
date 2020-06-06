@@ -8,6 +8,7 @@
    padding: 12px ;
    margin: 12px 8px;
    box-shadow: 1px 1px 4px var(--primary-color);
+   border-radius: 5px;
 }
 
 .Image {
@@ -28,7 +29,7 @@
    padding: 12px 8px;
    border-right: 2px solid var(--primary-color);
    text-align: right;
-   
+   border-bottom: 2px solid var(--accent-color);
 }
 
 .PricePer {
@@ -83,6 +84,17 @@
    }
    .Group {
       margin: 12px
+   }
+}
+
+
+@media (max-width: 500px) {
+   .Title, .Total {
+      font-size: 1.1rem;
+   }
+
+   .PricePer {
+      font-size: 1rem;
    }
 }
 

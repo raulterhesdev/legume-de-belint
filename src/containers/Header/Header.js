@@ -1,5 +1,5 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 import classes from './Header.module.css'
 
@@ -11,6 +11,8 @@ import { toggleSidebar} from '../../store/actions/adminActions'
 
 const Header = (props) => {
    const dispatch = useDispatch()
+   const sidebarOpen = useSelector(state => state.admin.sidebarOpen)
+
    const openSidebar = () => {
       dispatch(toggleSidebar())
    }
@@ -18,7 +20,7 @@ const Header = (props) => {
       <div className={classes.Header} >
          <Logo logoText = "Legume De Belint" />
          <Menu />
-         <Toggle onClick={openSidebar}/>
+         <Toggle onClick={openSidebar} sidebarOpen={sidebarOpen}/>
       </div>
    )
 }

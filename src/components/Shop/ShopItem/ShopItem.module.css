@@ -47,6 +47,17 @@
    color: var(--secondary-color-90)
 }
 
+@media (max-width: 500px){
+   .Image {
+      max-width: 90%;
+      max-height: 190px;
+   }
+
+   .ShopItem {
+      margin: 8px 4px;
+   }
+}
+
 
 
 

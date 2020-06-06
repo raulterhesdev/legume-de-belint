@@ -7,3 +7,10 @@
 }
 
 
+@media (max-width: 500px) {
+   .Presentation {
+      margin: 8px 0px;
+      padding: 12px 4px;
+   }
+}
+

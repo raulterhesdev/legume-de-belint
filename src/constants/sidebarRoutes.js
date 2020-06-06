@@ -7,10 +7,6 @@ export const sidebarRoutes = {
       route: 'produse',
       title: "Produse",
    },
-   content: {
-      route: 'editare-continut',
-      title: 'Editare Continut'
-   },
    stats: {
       route: 'statistici',
       title: 'Statistici'

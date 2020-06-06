@@ -63,7 +63,7 @@ const Cart = (props) => {
    })
 
    if(orderContent.length === 0){
-      orderContent[0] = (<p key="default">Nu ati adaugat nici un produs in cos. </p>)
+      orderContent[0] = (<p key="default" className={classes.ModalText}>Nu ati adaugat nici un produs in cos. </p>)
       buttonAvailable = false;
    }
 
@@ -108,7 +108,7 @@ const Cart = (props) => {
             </div>
          </Modal>
          <Modal show={showConfirmationModal} modalClosed={closeModalHandler} transparentBackdrop>
-            <p className={classes.ModalText}>Comanda a fost trimisa. Va vom contacta pentru confirmare</p>
+            <p className={classes.ModalText}>Comanda a fost trimisa. Veti fi contactati pentru confirmare</p>
          </Modal>
          <div className={classes.container}
          >

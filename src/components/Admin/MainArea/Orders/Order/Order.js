@@ -57,12 +57,15 @@ const Order = ({order, showVegetables, showContact,index, ...props}) => {
       <div className={classes.Order}>
          <div className={classes.OrderSummary}>
             <p>{`${order.contactInfo.name} ${order.contactInfo.surname}`}</p>
-            <p>{order.totalPrice}Lei</p>
-            <p>{order.date.toString().slice(0,10)} {order.date.toString().slice(11,16)}</p>
+            <div className={classes.DatePrice}>
+               <p>Pret: {order.totalPrice}Lei</p>
+               <p>Data: {order.date.toString().slice(0,10)} {order.date.toString().slice(11,16)}</p>
+            </div>
             <button onClick={expandData} className={classes.ExpandButton}>{expanded ? <i className="far fa-minus-square"></i> : <i className="far fa-plus-square"></i>}</button>
          </div>
          {expanded ? <div className={classes.OrderData}>
             <div className={classes.Details}>
+               
                <p className={classes.Contact}>Contact:</p>
                <p className={classes.Contact}>{`Nume: ${order.contactInfo.name} ${order.contactInfo.surname}`}</p>
                <p className={classes.Contact}>{`Telefon: ${order.contactInfo.phone}`}</p>

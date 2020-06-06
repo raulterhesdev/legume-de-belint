@@ -21,6 +21,11 @@
    justify-content: space-between;
 }
 
+.ModalText {
+   color: var(--dark-color);
+   text-align: center;
+}
+
 
 @media (max-width: 1000px) {
    .CartContainer {
@@ -36,5 +41,15 @@
    .Cart {
       padding: 8px 12px;
    }
+   
+}
+
+@media (max-width: 500px) {
+   
+   .CartDetails{
+      min-width: 90vw;
+      max-width: 480px;
+   }
+
    
 }

@@ -82,6 +82,20 @@
    background: var(--dark-color-70);
 }
 
+@media (max-width: 500px) {
+   .Legend {
+      display: none;
+   }
+   .IndicatorStyle{
+      width: 5px;
+      height: 5px;
+   }
+   .CarouselContainer {
+      margin: 8px 0px;
+      padding: 3%;
+   }
+}
+
 
 
 

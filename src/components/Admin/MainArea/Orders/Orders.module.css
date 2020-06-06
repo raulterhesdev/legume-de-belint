@@ -8,10 +8,22 @@
    width: 100%;
    padding: 5px 12px 15px 12px;
    border-bottom: 1px solid var(--primary-color-70);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }
 .OrdersContainer{
    width: 90%;
    max-width: 1280px;
    margin: auto;
+}
+
+@media (max-width: 500px) {
+   .OrdersContainer {
+      width: 98%;
+   }
+   .ActionContainer{
+      flex-direction: column-reverse;
+   }
 }
 

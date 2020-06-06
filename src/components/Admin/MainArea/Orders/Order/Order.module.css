@@ -1,7 +1,6 @@
 .Order {
    width: 100%;
    margin: 5px;
-
 }
 
 .OrderSummary {
@@ -39,8 +38,11 @@
    border-bottom: 1px solid var(--primary-color-70);
 }
 
+.DatePrice {
+   font-size: 0.8rem;
+}
 .Span {
-   padding-left: 3px;
+   padding: 4px;
 }
 
 .Span:first-child{
@@ -55,6 +57,7 @@
 
 .Contact {
    border-bottom: 1px solid var(--primary-color-70);
+   padding: 4px;
 }
 
 .ExpandButton{

@@ -11,3 +11,13 @@
    padding-left: 4px;
    border-left: 3px solid var(--accent-color);
 }
+
+@media (max-width: 500px) {
+   .PresentationText {
+      font-size: 0.9rem;
+      margin: 0 10px 10px 0px;
+   }
+   .PresentationSubtitle {
+      font-size: 1.1rem;
+   }
+}

@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react'
 import {useDispatch} from 'react-redux'
 import FileUploader from "react-firebase-file-uploader";
 
+
 import firebase from '../../../../../firebase'
 
-import classes from '../../../../UI/Input/Input'
+import classes from './EditProduct.module.css'
 
 import Input from '../../../../UI/Input/Input'
 import PrimaryButton from '../../../../UI/PrimaryButton/PrimaryButton'
+import DangerButton from '../../../../UI/DangerButton/DangerButton'
 import Select from '../../../../UI/Select/Select'
 
-import * as adminActions from '../../../../../store/actions/adminActions'
+
 import * as itemsActions from '../../../../../store/actions/itemsActions'
 
 const EditProduct = ({editItem,...props}) => {
@@ -89,7 +91,8 @@ const EditProduct = ({editItem,...props}) => {
       setIsUploading(false)
       setError(error)
    }
-   const handleUploadSuccess = file => {
+   const handleUploadSuccess = async file => {
+
       firebase
       .storage()
       .ref("images")
@@ -164,14 +167,18 @@ const EditProduct = ({editItem,...props}) => {
    }
 
    return (
-      <div>
-         {editItem ? <div>
-            <PrimaryButton onClick={disableHandler}>
-               {enabled ? 'Disable' : 'Enable'}
-            </PrimaryButton>
-            <PrimaryButton onClick={deleteHandler}>
-               Delete
-            </PrimaryButton>
+      <div className={classes.EditProduct}>
+         {editItem ? <div className={classes.ActionContainer}>
+            <div className={classes.ButtonContainer}>
+               <PrimaryButton onClick={disableHandler}>
+                  {enabled ? 'Disable' : 'Enable'}
+               </PrimaryButton>
+            </div>
+            <div className={classes.ButtonContainer}>
+               <DangerButton onClick={deleteHandler}>
+                  Delete
+               </DangerButton>
+            </div>
          </div> :
          null}
          <Input 
@@ -194,9 +201,13 @@ const EditProduct = ({editItem,...props}) => {
          onChange={inputChangeHandler}
          id={inputKeys.unit}
          />
+         <label className={classes.LabelFile}>
+            Selectati o imagine
          <FileUploader
             accept="image/*"
             name="vegetable"
+            hidden
+            maxWidth={500}
             // randomizeFilename
             storageRef={firebase.storage().ref("images")}
             onUploadStart={handleUploadStart}
@@ -205,11 +216,14 @@ const EditProduct = ({editItem,...props}) => {
             onProgress={handleProgress}
             // as={compoennt}
          />
+         </label>
          {isUploading && <p>{progress != 100 ? `Uploading: ${progress}%` : !imageUrl ? "Image Uploaded. Getting image url. Please wait" : 'Image Uploaded'}</p>}
          <p>{error}</p>
+         <div className={classes.ButtonContainerBig}>
          <PrimaryButton onClick={buttonPressedHandler} disabled={imageUrl ? false : true}>
             {editItem ? "Editeaza Produsul" : "Adauga Produsul"}
          </PrimaryButton>
+         </div>
       </div>
    )
 }
